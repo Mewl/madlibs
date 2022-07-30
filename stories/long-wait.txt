@@ -1,0 +1,3 @@
+One {x[ADJ[0]]} day a man named {x[NOUN[0]]} was waiting for the bus. 
+While waiting for the bus, he {x[VERB[0]]} a {x[ANI[0]]}.
+{x[NOUN[0]]} felt {x[FEE[0]]} about {x[ANI[0]]}s.
