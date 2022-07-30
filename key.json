@@ -1,0 +1,11 @@
+{
+    "ADJ": "Adjective - describing word",
+    "VERB": "Verb - doing word",
+    "VERBING": "Verb ending in 'ing' - doing word",
+    "NOUN": "Noun - thing",
+    "PNOUN": "Proper Noun - name",
+    "INT": "Interjection - an exclamation",
+    "NUM": "Number",
+    "ANI": "Animal",
+    "FEE": "Feeling"
+}
