@@ -1,4 +1,4 @@
-import os, re
+import os, re, json
 
 def getStoryTitles(story_list):
     """ Get story names from txt file names
@@ -40,6 +40,35 @@ def pickStory(num_stories):
         pickStory(num_stories) 
 
 # TODO: Get words from user
+def getWords(story_file):
+    """ Get words from the user
+
+    Args:
+        story_file (string): name of the story file
+
+    Returns:
+        array: an array of arrays to map words
+    """
+    # Open key file, get dictionary, close
+    k = open('key.json', 'r')
+    word_keys = json.load(k)
+    k.close
+    
+    x = []  # Initialise array of words
+    
+    # Set words
+    for key in word_keys.keys():
+        x.append(key)
+    
+    # Open selected story file
+    with open('./stories/' + story_file, 'r') as f:
+        story = f.read()
+    f.close
+    
+    story_keys = re.findall('([A-Z]+\[\d+\])', story)
+    
+    return story_keys
+    
 
 # TODO: Assign words to parts of story
 
@@ -59,11 +88,10 @@ def main():
     story_id = pickStory(num_stories)
     story_file = story_list[story_id]
     
-    # Open selected story file
-    f = open(story_file, 'r')
+    words = getWords(story_file)
     
     # TODO: get words, format story
     
-    print(story_file)
+    print(words)
     
 main()
