@@ -39,7 +39,6 @@ def pickStory(num_stories):
         print('Please enter story number') 
         pickStory(num_stories) 
 
-# TODO: Get words from user
 def getWords(story_file):
     """ Get words from the user
 
@@ -65,12 +64,30 @@ def getWords(story_file):
         story = f.read()
     f.close
     
+    # Get the keys, assign words
     story_keys = re.findall('([A-Z]+\[\d+\])', story)
     
+    for word in story_keys:
+        trimmed = word[:-3]
+        # TODO: globals(){word} = input('Please enter a ' + x[trimmed] + ': ')
+        
     return story_keys
-    
 
-# TODO: Assign words to parts of story
+def printStory(words):
+    """ Print the story for the user
+
+    Args:
+        words (words): word version of arrays
+    """
+    story = x.format(globals()[words])
+    
+    x = input('/nPress enter to view story/n')
+    
+    print(story)
+    return
+    
+    
+    
 
 def main():
     # Get list of story txt files and titles
@@ -87,11 +104,7 @@ def main():
     # Select a story
     story_id = pickStory(num_stories)
     story_file = story_list[story_id]
-    
     words = getWords(story_file)
-    
-    # TODO: get words, format story
-    
-    print(words)
+    printStory(words)
     
 main()
