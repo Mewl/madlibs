@@ -5,7 +5,7 @@
     "NOUN": "a Noun - a thing",
     "NOUNS": "a Plural Noun - a thing ending in s",
     "PNOUN": "a Proper Noun - a name",
-    "INT": "an Interjection - an exclamation",
+    "INTJ": "an Interjection - an exclamation",
     "NUM": "a Number",
     "ANI": "an Animal",
     "FEE": "a Feeling"
