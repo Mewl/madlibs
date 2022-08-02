@@ -1,5 +1,6 @@
 import os, re, json
 
+
 def getStoryTitles(story_list):
     """ Get story names from txt file names
 
@@ -16,6 +17,7 @@ def getStoryTitles(story_list):
         story_titles.append(re.sub('-', ' ', story[0:-4]))
         
     return story_titles
+
 
 def pickStory(num_stories):
     """ Pick the story
@@ -39,6 +41,7 @@ def pickStory(num_stories):
         print('Please enter story number') 
         pickStory(num_stories) 
 
+
 def getWords(story_file):
     """ Get words from the user
 
@@ -53,41 +56,29 @@ def getWords(story_file):
     word_keys = json.load(k)
     k.close
     
-    x = []  # Initialise array of words
+    x = [] # Initialise a list
     
     # Set words
     for key in word_keys.keys():
-        x.append(key)
+        exec(key + ' = {}')
     
     # Open selected story file
     with open('./stories/' + story_file, 'r') as f:
         story = f.read()
     f.close
     
-    # Get the keys, assign words
+    # Get the unique keys, assign words
     story_keys = re.findall('([A-Z]+\[\d+\])', story)
+    story_keys = list(dict.fromkeys(story_keys))
     
     for word in story_keys:
         trimmed = word[:-3]
-        # TODO: globals(){word} = input('Please enter a ' + x[trimmed] + ': ')
+        exec( word + ' = "' + input('Please enter ' + word_keys[trimmed] + ': ') + '"') 
         
-    return story_keys
-
-def printStory(words):
-    """ Print the story for the user
-
-    Args:
-        words (words): word version of arrays
-    """
-    story = x.format(globals()[words])
-    
-    x = input('/nPress enter to view story/n')
-    
+    story = story.format(**locals())
+    x = input('\n\nPress enter to read story\n\n')
     print(story)
-    return
-    
-    
-    
+
 
 def main():
     # Get list of story txt files and titles
@@ -104,7 +95,9 @@ def main():
     # Select a story
     story_id = pickStory(num_stories)
     story_file = story_list[story_id]
-    words = getWords(story_file)
-    printStory(words)
+    
+    # Get and print the words
+    getWords(story_file)
+    
     
 main()
