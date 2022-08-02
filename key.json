@@ -1,11 +1,11 @@
 {
-    "ADJ": "Adjective - describing word",
-    "VERB": "Verb - doing word",
-    "VERBING": "Verb ending in 'ing' - doing word",
-    "NOUN": "Noun - thing",
-    "PNOUN": "Proper Noun - name",
-    "INT": "Interjection - an exclamation",
-    "NUM": "Number",
-    "ANI": "Animal",
-    "FEE": "Feeling"
+    "ADJ": "an Adjective - a describing word",
+    "VERB": "a Verb - a doing word (not ending in 'ing')",
+    "VERBING": "a Verb ending in 'ing' - a doing word",
+    "NOUN": "a Noun - a thing",
+    "PNOUN": "a Proper Noun - a name",
+    "INT": "an Interjection - an exclamation",
+    "NUM": "a Number",
+    "ANI": "an Animal",
+    "FEE": "a Feeling"
 }
