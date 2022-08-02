@@ -1,2 +1,2 @@
 On a peaceful island there were {ADJ[0]} {NOUN[0]}s.
-The {ADJ[0]} {NOUN[0]}s liked {VERBING[0]} {ADJ[0]} {NOUN[1]}s.
+The {ADJ[0]} {NOUN[0]}s liked {VERBING[0]} {ADJ[1]} {NOUN[1]}.
