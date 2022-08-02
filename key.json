@@ -3,6 +3,7 @@
     "VERB": "a Verb - a doing word (not ending in 'ing')",
     "VERBING": "a Verb ending in 'ing' - a doing word",
     "NOUN": "a Noun - a thing",
+    "NOUNS": "a Plural Noun - a thing ending in s",
     "PNOUN": "a Proper Noun - a name",
     "INT": "an Interjection - an exclamation",
     "NUM": "a Number",
